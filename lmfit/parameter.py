@@ -78,6 +78,12 @@ class Parameters(OrderedDict):
         for para in parlist:
             self.add(*para)
 
+    def values(self):
+        """convenience function returning a dict containing mappings from
+        parameters' names to their values.
+        """
+        return { k: v.value for k,v in self.items() }
+
 class Parameter(object):
     """A Parameter is the basic Parameter going
     into Fit Model.  The Parameter holds many attributes:
